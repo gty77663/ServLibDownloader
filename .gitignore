@@ -1,0 +1,5 @@
+*.pdf
+*.css
+tmp
+.venv
+.idea
