@@ -44,6 +44,7 @@ else:
     try:
         devnull = open(os.devnull)
         subprocess.Popen(["wkhtmltopdf"], stdout=devnull, stderr=devnull).communicate()
+        devnull.close()
     except OSError as e:
         if e.errno == os.errno.ENOENT:
             print(
