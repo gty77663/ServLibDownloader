@@ -42,12 +42,14 @@ if platform.system() == "Windows":
         wkhtmltopdf_path = os.getcwd() + "/wkhtmltopdf/windows32/bin/wkhtmltopdf.exe"
 else:
     try:
-        subprocess.call(["wkhtmltopdf"])
-    except FileNotFoundError:
-        print(
-            "If you're on MAC or Linux you need to install the appropriete version of wkhtmltopdf for your system and "
-            "add it to PATH from https://wkhtmltopdf.org/downloads.html")
-        quit()
+        devnull = open(os.devnull)
+        subprocess.Popen(["wkhtmltopdf"], stdout=devnull, stderr=devnull).communicate()
+    except OSError as e:
+        if e.errno == os.errno.ENOENT:
+            print(
+                "If you're on MAC or Linux you need to install the appropriete version of wkhtmltopdf for your system "
+                "and add it to PATH from https://wkhtmltopdf.org/downloads.html")
+            quit()
 
 pdfkit_config = pdfkit.configuration(wkhtmltopdf=wkhtmltopdf_path)
 
