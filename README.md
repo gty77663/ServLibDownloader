@@ -2,7 +2,7 @@
 
 Access the manuals from [ServLib](https://servlib.com).
 This for educational purposes on how to find and archive data. The project is inspired by [this](https://github.com/AriZoneVibes/ServLibScrapper/) repository 
-from [AriZoneVibes](https://github.com/AriZoneVibes) with similar functionality, but improved to be able to parse pdfs with selectable text.
+from [AriZoneVibes](https://github.com/AriZoneVibes) with similar functionality, but improved to be able to parse PDFs with selectable text.
 
 ## Requirements
 
